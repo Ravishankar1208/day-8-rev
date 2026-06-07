@@ -10,7 +10,7 @@ function App() {
 
 
   function  fetchnotes(){
-         axios.get('http://localhost:3000/api/notes')
+         axios.get('https://day-8-rev.onrender.com/api/notes')
   .then(res=>{
     setNotes(res.data.notes)
   })
@@ -28,7 +28,7 @@ function App() {
     console.log(title.value , description.value)
 
 
-    axios.post('http://localhost:3000/api/notes',{
+    axios.post('https://day-8-rev.onrender.com/api/notes',{
       title:title.value,
       description : description.value
     })
@@ -39,7 +39,7 @@ function App() {
   }
 
 function handleDeleteNote(noteID){
-  axios.delete('http://localhost:3000/api/notes/'+noteID)
+  axios.delete('https://day-8-rev.onrender.com/api/notes/'+noteID)
   .then(res=>{
     console.log(res.data)
     fetchnotes()
@@ -54,7 +54,7 @@ function handleUpdateNote(noteID){
 
 
   axios.patch(
-    'http://localhost:3000/api/notes/'+noteID,
+    'https://day-8-rev.onrender.com/api/notes/'+noteID,
     {
       title: newTitle, 
       description: newDescription
