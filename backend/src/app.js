@@ -7,7 +7,7 @@ const path = require('path')
 const app = express();
 app.use(express.json());
 app.use(cors())
-app.use(express.static(path.join(__dirname, "..", "public")))
+app.use(express.static(path.join(__dirname, "..", "public", "dist")))
 
 app.post('/api/notes' , async (req, res) => {
 
@@ -61,7 +61,7 @@ app.patch('/api/notes/:id' , async (req, res) => {
 
 app.use((req,res)=>{
   res.sendFile(
-    path.join(__dirname, "..", "public", "index.html")
+    path.join(__dirname, "..", "public", "dist", "index.html")
   )
 })
 
